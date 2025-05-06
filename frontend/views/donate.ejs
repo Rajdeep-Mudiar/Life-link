@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Donation Form</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <link rel="stylesheet" href="/css/donate.css"/>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">LifeLink</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Requests</a>
+      <a href="#">Live Map</a>
+      <a href="#">Profile</a>
+    </nav>
+  </header>
+
+  <div class="form-container">
+    <h2>Blood Donation Form</h2>
+    <form id="donationForm">
+      <label>Full Name</label>
+      <input type="text" placeholder="Enter full name"/>
+
+      <label>Contact Number</label>
+      <input type="tel" placeholder="Enter contact number"/>
+
+      <label>Age</label>
+      <input type="number" placeholder="Enter age"/>
+
+      <label>Blood Type</label>
+      <select>
+        <option>Select</option>
+        <option>A+</option>
+        <option>B+</option>
+        <option>O+</option>
+        <option>AB+</option>
+        <option>A-</option>
+        <option>B-</option>
+        <option>O-</option>
+        <option>AB-</option>
+      </select>
+
+      <label>Quantity</label>
+      <input type="number" placeholder="In mL"/>
+
+      <label>Location</label>
+      <input type="text" id="locationInput" readonly placeholder="Click to select on map"/>
+
+      <label>Donation Method</label>
+      <select>
+        <option>Select</option>
+        <option>Pickup</option>
+        <option>Drop-off</option>
+      </select>
+
+      <label>Pickup Location</label>
+      <input type="text" placeholder="Enter pickup address"/>
+
+      <label>Pickup Date</label>
+      <input type="date"/>
+
+      <label>Pickup Time</label>
+      <input type="time"/>
+
+      <button type="submit">Submit Donation</button>
+    </form>
+  </div>
+
+  <div id="mapPopup">
+    <div class="map-header">
+      <button id="useLocation">📍 Use My Current Location</button>
+      <button id="manualToggle">🖱️ Add Marker Manually</button>
+      <button id="closeMap">❌ Close</button>
+    </div>
+    <div id="map"></div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="/js/donate.js"></script>
+</body>
+</html>

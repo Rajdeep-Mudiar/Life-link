@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Affordable Medications</title>
+  <link rel="stylesheet" href="/css/store.css" />
+</head>
+<body>
+  <section class="meds-section">
+    <div class="left">
+      <div class="banner">Connecting unused medicines to those in need</div>
+      <h1><span class="highlight">Affordable</span> Medications For Everyone</h1>
+      <p>
+        Find unexpired, unused medications at discounted prices.
+        Help reduce waste while making healthcare more accessible.
+      </p>
+      <div class="buttons">
+        <button class="primary-btn">Browse Medicines →</button>
+        <button class="secondary-btn">How It Works</button>
+      </div>
+      <div class="features">
+        <span>✔️ Quality Verified</span>
+        <span>✔️ Pharmacist Approved</span>
+        <span>✔️ Secure Packaging</span>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="card">
+        <div class="ribbon">Save 60%</div>
+        <div class="icon">
+          💊
+        </div>
+        <h3>Blood Pressure Medication</h3>
+        <div class="price">
+          <span class="new">$19.99</span>
+          <span class="old">$49.99</span>
+          <span class="discount">-60%</span>
+        </div>
+        <p>Unused, unopened. Exp. 05/2026. Verified by pharmacist.</p>
+        <button class="add-cart-btn" onclick="addToCart()">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+  <section class="category-section">
+    <h2>Browse by Category</h2>
+    <p class="subtext">Explore our wide range of discounted medication categories</p>
+  
+    <div class="categories">
+      <div class="category-card">
+        <div class="icon-circle" style="background: #ffe8e8;"><span>❤️</span></div>
+        <h3>Blood Pressure</h3>
+        <p>Save up to 70%</p>
+      </div>
+      <div class="category-card">
+        <div class="icon-circle" style="background: #eaf3ff;"><span>💧</span></div>
+        <h3>Diabetes</h3>
+        <p>Save up to 70%</p>
+      </div>
+      <div class="category-card">
+        <div class="icon-circle" style="background: #fff7d4;"><span>💊</span></div>
+        <h3>Cholesterol</h3>
+        <p>Save up to 70%</p>
+      </div>
+      <div class="category-card">
+        <div class="icon-circle" style="background: #f4eaff;"><span>🩹</span></div>
+        <h3>Pain Relief</h3>
+        <p>Save up to 70%</p>
+      </div>
+      <div class="category-card">
+        <div class="icon-circle" style="background: #e8fdf2;"><span>🧠</span></div>
+        <h3>Mental Health</h3>
+        <p>Save up to 70%</p>
+      </div>
+      <div class="category-card">
+        <div class="icon-circle" style="background: #e2fcfb;"><span>🌡️</span></div>
+        <h3>Antibiotics</h3>
+        <p>Save up to 70%</p>
+      </div>
+    </div>
+  </section>
+  <section class="popular-meds-section">
+    <h2>Most Popular Discounted Medicines</h2>
+    <p class="subtext">These are our best-selling medications at significant savings</p>
+  
+    <div class="medicine-cards">
+      <!-- Card 1 -->
+      <div class="medicine-card">
+        <div class="top-labels">
+          <span class="badge">Blood Pressure</span>
+          <span class="discount">-58%</span>
+        </div>
+        <div class="med-icon">💊</div>
+        <h3>Lisinopril</h3>
+        <p class="price">
+          $18.99 <span class="old-price">$45.99</span>
+        </p>
+        <p class="expiry">Expiry: 05/2026</p>
+        <p class="verified">✔ Verified by pharmacist</p>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+  
+      <!-- Card 2 -->
+      <div class="medicine-card">
+        <div class="top-labels">
+          <span class="badge">Diabetes</span>
+          <span class="discount">-67%</span>
+        </div>
+        <div class="med-icon">💊</div>
+        <h3>Metformin</h3>
+        <p class="price">
+          $12.99 <span class="old-price">$39.99</span>
+        </p>
+        <p class="expiry">Expiry: 08/2025</p>
+        <p class="verified">✔ Verified by pharmacist</p>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+  
+      <!-- Card 3 -->
+      <div class="medicine-card">
+        <div class="top-labels">
+          <span class="badge">Cholesterol</span>
+          <span class="discount">-60%</span>
+        </div>
+        <div class="med-icon">💊</div>
+        <h3>Atorvastatin</h3>
+        <p class="price">
+          $25.99 <span class="old-price">$65.99</span>
+        </p>
+        <p class="expiry">Expiry: 03/2026</p>
+        <p class="verified">✔ Verified by pharmacist</p>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+  
+      <!-- Card 4 -->
+      <div class="medicine-card">
+        <div class="top-labels">
+          <span class="badge">Mental Health</span>
+          <span class="discount">-64%</span>
+        </div>
+        <div class="med-icon">💊</div>
+        <h3>Sertraline</h3>
+        <p class="price">
+          $19.99 <span class="old-price">$55.99</span>
+        </p>
+        <p class="expiry">Expiry: 11/2025</p>
+        <p class="verified">✔ Verified by pharmacist</p>
+        <button class="add-cart">Add to Cart</button>
+      </div>
+    </div>
+  
+    <button class="view-all-btn">View All Medicines</button>
+  </section>
+
+  
+  <section class="how-it-works">
+    <h2>How MediShare Works</h2>
+    <p class="subtitle">
+      Our rigorous process ensures you receive safe, effective medications at a fraction of the cost
+    </p>
+  
+    <div class="steps-container">
+      <!-- Step 1 -->
+      <div class="step-card">
+        <div class="step-circle" style="background-color: #2ac9c9;">1</div>
+        <div class="step-icon">✔</div>
+        <h3>Verification Process</h3>
+        <p>
+          All medicines go through a strict verification process by licensed pharmacists to ensure quality and safety.
+        </p>
+      </div>
+  
+      <!-- Step 2 -->
+      <div class="step-card">
+        <div class="step-circle" style="background-color: #249eff;">2</div>
+        <div class="step-icon">🔍</div>
+        <h3>Find Medicines</h3>
+        <p>
+          Browse our selection of verified, unexpired medications at 50-70% below retail prices.
+        </p>
+      </div>
+  
+      <!-- Step 3 -->
+      <div class="step-card">
+        <div class="step-circle" style="background-color: #a259ff;">3</div>
+        <div class="step-icon">🛡</div>
+        <h3>Quality Assurance</h3>
+        <p>
+          Every medicine is inspected for proper sealing, packaging integrity, and expiration date.
+        </p>
+      </div>
+  
+      <!-- Step 4 -->
+      <div class="step-card">
+        <div class="step-circle" style="background-color: #32cc65;">4</div>
+        <div class="step-icon">📦</div>
+        <h3>Secure Delivery</h3>
+        <p>
+          Your medicines are delivered in secure, temperature-controlled packaging directly to your door.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="donate-banner">
+    <div class="donate-content">
+      <div>
+        <h3>Do you have unused medications?</h3>
+        <p>Donate your unexpired, unopened medicines and get store credit in return.</p>
+      </div>
+      <div class="donate-buttons">
+        <button class="btn-primary">Donate Medicines</button>
+        <button class="btn-secondary">Learn More</button>
+      </div>
+    </div>
+  </section>
+  
+
+  <script src="/js/store.js"></script>
+</body>
+</html>

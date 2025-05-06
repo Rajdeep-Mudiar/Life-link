@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Leaflet Map with Hospitals, Blood Banks & Pharmacies</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+
+  <style>
+    #map {
+      height: 100vh;
+      width: 100%;
+    }
+    .leaflet-popup-content {
+      text-align: center;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+
+  <script>
+    let map = L.map('map').setView([0, 0], 13);
+    let currentMarker = null;
+    let currentCircle = null;
+    let routeControl = null;
+    let currentLat = 0;
+    let currentLng = 0;
+
+    const names = [
+      "Alice", "Bob", "Charlie", "Diana", "Ethan",
+      "Fiona", "George", "Hannah", "Ivan", "Julia"
+    ];
+
+    // Google tile layer
+    L.tileLayer('http://{s}.google.com/vt?lyrs=m&x={x}&y={y}&z={z}', {
+      maxZoom: 20,
+      subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+    }).addTo(map);
+
+    function generateNearbyLocations(lat, lng, count, radius) {
+      const locations = [];
+      for (let i = 0; i < count; i++) {
+        const randomLat = lat + (Math.random() - 0.5) * (radius / 111000);
+        const randomLng = lng + (Math.random() - 0.5) * (radius / (111000 * Math.cos(lat * Math.PI / 180)));
+        locations.push([randomLat, randomLng]);
+      }
+      return locations;
+    }
+
+    function addDummyPersons(lat, lng) {
+      const dummyLocations = generateNearbyLocations(lat, lng, 10, 1000);
+
+      dummyLocations.forEach((location, index) => {
+        const icon = L.icon({
+          iconUrl: `/image/pic${index + 1}.jpg`,
+          iconSize: [50, 50],
+          className: 'dummy-icon'
+        });
+
+        const marker = L.marker(location, { icon }).addTo(map);
+        const personName = names[index];
+
+        marker.bindPopup(`${personName}`);
+
+        marker.on('click', () => {
+          if (routeControl) {
+            map.removeControl(routeControl);
+          }
+
+          routeControl = L.Routing.control({
+            waypoints: [
+              L.latLng(currentLat, currentLng),
+              L.latLng(location[0], location[1])
+            ],
+            show: false,
+            addWaypoints: false,
+            draggableWaypoints: false,
+            routeWhileDragging: false
+          })
+          .on('routesfound', function(e) {
+            const timeInSeconds = e.routes[0].summary.totalTime;
+            const timeInMinutes = Math.round(timeInSeconds / 60);
+            alert(`Route to ${personName}\nEstimated time: ${timeInMinutes} minutes`);
+          })
+          .addTo(map);
+        });
+      });
+    }
+
+    function addHealthcareFacilities(lat, lng) {
+      const hospitals = generateNearbyLocations(lat, lng, 3, 1500);
+      const bloodBanks = generateNearbyLocations(lat, lng, 2, 1200);
+      const pharmacies = generateNearbyLocations(lat, lng, 3, 1000);
+
+      const icons = {
+        hospital: L.icon({ iconUrl: 'doctor.png', iconSize: [40, 40] }),
+        blood: L.icon({ iconUrl: 'blood.png', iconSize: [40, 40] }),
+        medicine: L.icon({ iconUrl: 'medicine.png', iconSize: [40, 40] })
+      };
+
+      hospitals.forEach(loc => {
+        L.marker(loc, { icon: icons.hospital }).addTo(map).bindPopup("Hospital");
+      });
+
+      bloodBanks.forEach(loc => {
+        L.marker(loc, { icon: icons.blood }).addTo(map).bindPopup("Blood Bank");
+      });
+
+      pharmacies.forEach(loc => {
+        L.marker(loc, { icon: icons.medicine }).addTo(map).bindPopup("Pharmacy");
+      });
+    }
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(position => {
+        currentLat = position.coords.latitude;
+        currentLng = position.coords.longitude;
+        const accuracy = position.coords.accuracy;
+
+        if (currentMarker) map.removeLayer(currentMarker);
+        if (currentCircle) map.removeLayer(currentCircle);
+
+        currentMarker = L.marker([currentLat, currentLng]).addTo(map);
+        currentCircle = L.circle([currentLat, currentLng], { radius: accuracy }).addTo(map);
+
+        const group = L.featureGroup([currentMarker, currentCircle]).addTo(map);
+        map.fitBounds(group.getBounds());
+
+        addDummyPersons(currentLat, currentLng);
+        addHealthcareFacilities(currentLat, currentLng);
+      }, () => {
+        alert("Geolocation access denied.");
+      });
+    } else {
+      alert("Geolocation is not supported by this browser.");
+    }
+  </script>
+</body>
+</html>

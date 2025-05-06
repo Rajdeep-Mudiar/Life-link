@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Request Help | LifeLink</title>
+  <link rel="stylesheet" href="/css/request-help.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="background"></div>
+
+  <div class="container">
+    <header>
+      <h1>🆘 Request Help</h1>
+      <p>Fill out this form to let us know how we can assist you.</p>
+    </header>
+
+    <section class="form-card">
+      <form id="helpForm">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" required />
+
+        <label for="contact">Contact Number</label>
+        <input type="tel" id="contact" required />
+
+        <label for="helpType">Type of Help Needed</label>
+        <select id="helpType" required>
+          <option value="">Select an Option</option>
+          <option value="blood">Blood</option>
+          <option value="medicine">Medicine</option>
+          <option value="medical-support">Medical Support</option>
+        </select>
+
+        <label for="location">Location</label>
+        <input type="text" id="location" required />
+
+        <label for="details">Additional Details</label>
+        <textarea id="details" rows="4" placeholder="Any additional information..."></textarea>
+
+        <button type="submit">Submit Request</button>
+      </form>
+
+      <div id="responseMessage" class="hidden">✅ Your request has been submitted successfully!</div>
+    </section>
+  </div>
+
+  <script src="/js/request-help.js"></script>
+</body>
+</html>

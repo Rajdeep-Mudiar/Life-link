@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blood Donation Dashboard</title>
+  <link rel="stylesheet" href="/css/dashboard.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <div class="dashboard1">
+    <div class="header">
+      <img src="user.jpg" alt="User Photo" class="user-photo">
+      <div>
+        <h2>Welcome back, <strong>Alex Morgan</strong></h2>
+        <p>Blood Type: O+ | Points: 580 | Total Donations: 6</p>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="card-1 donors">
+        <h3>📍 Top Donors of the Month</h3>
+        <div class="tabs">
+          <button class="active">By Donations</button>
+          <button>By Lives Saved</button>
+        </div>
+        <ul class="donor-list">
+          <li><span>1</span> Emma Thompson <small>12 donations</small></li>
+          <li><span>2</span> James Wilson <small>10 donations</small></li>
+          <li><span>3</span> Sophia Garcia <small>9 donations</small></li>
+          <li><span>4</span> Michael Chen <small>8 donations</small></li>
+          <li><span>5</span> Olivia Johnson <small>7 donations</small></li>
+        </ul>
+      </div>
+
+      <div class="card-1 impact">
+        <h3>💙 Community Impact Board</h3>
+        <div class="stats">
+          <div><strong>567</strong><br>Total Donations</div>
+          <div><strong>1701</strong><br>Lives Saved</div>
+          <div><strong>238</strong><br>Active Donors</div>
+          <div><strong>342</strong><br>Medicine Shared</div>
+        </div>
+
+        <canvas id="monthlyChart" width="300" height="150"></canvas>
+
+        <div class="progress-goals">
+          <p>Monthly Goal Progress</p>
+          <label>Blood Donations</label>
+          <progress value="65" max="100"></progress>
+
+          <label>Medicine Donations</label>
+          <progress value="78" max="100" class="blue"></progress>
+
+          <label>Emergency Responses</label>
+          <progress value="92" max="100" class="orange"></progress>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+  <div class="container">
+    <!-- Badges Section -->
+    <div class="badges-section">
+      <h2>🏅 Badges & Recognition</h2>
+      <div class="tabs">
+        <button class="tab active">Your Badges</button>
+        <button class="tab" disabled>Available Badges</button>
+      </div>
+      <div class="badges">
+        <div class="badge-card">
+          <div class="badge-icon">🏅</div>
+          <h3>Regular Donor</h3>
+          <p>Donated for 3 consecutive months</p>
+          <span class="badge-tier">Bronze</span>
+          <div class="badge-date">Earned: 2/15/2025</div>
+        </div>
+        <div class="badge-card">
+          <div class="badge-icon">🏅</div>
+          <h3>First Time Donor</h3>
+          <p>Completed first donation</p>
+          <span class="badge-tier">Bronze</span>
+          <div class="badge-date">Earned: 11/20/2024</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Share Section -->
+    <div class="share-section">
+      <h2>🔗 Share Your Achievements</h2>
+      <p class="impact-text">
+        You've donated <strong>6 times</strong> and earned <strong>2 badges</strong>. Share your achievements and inspire others to donate!
+      </p>
+      <div class="quote-box">
+        "I've saved 18 lives through blood and medicine donations with <strong>BloodLifeImpact</strong>! Join me in making a difference."
+      </div>
+      <div class="social-buttons">
+        <button>🐦 Twitter</button>
+        <button>📘 Facebook</button>
+        <button>💼 LinkedIn</button>
+        <button>🔗 Copy Link</button>
+      </div>
+
+      <h3>Latest Achievements</h3>
+      <div class="achievement-list">
+        <div class="achievement-item">
+          <span>🏅 Regular Donor</span>
+          <p>Donated for 3 consecutive months</p>
+          <button class="share-btn">🔗 Share</button>
+        </div>
+        <div class="achievement-item">
+          <span>🏅 First Time Donor</span>
+          <p>Completed first donation</p>
+          <button class="share-btn">🔗 Share</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+<!-- section 3 -->
+
+<div class="dashboard3">
+    <!-- Earn Points Section -->
+    <div class="earn-points">
+      <h2><span class="icon">🩸</span> Earn Points for Helping</h2>
+      <div class="points-balance">
+        <div>
+          <p>Your Points Balance</p>
+          <h1>580 <span>pts</span></h1>
+          <p class="progress-label">Progress to next reward tier</p>
+          <div class="progress-bar">
+            <div class="progress" style="width: 58%;"></div>
+          </div>
+          <p class="progress-score">580 / 1000 points</p>
+        </div>
+      </div>
+      <div class="ways-to-earn">
+        <h3>Ways to Earn Points</h3>
+        <div class="grid">
+          <div class="card-3">Blood Donation <span class="points">+100 pts</span></div>
+          <div class="card-3">Medicine Donation <span class="points">+75 pts</span></div>
+          <div class="card-3">Emergency Response <span class="points">+150 pts</span></div>
+          <div class="card-3">Refer a Friend <span class="points">+50 pts</span></div>
+          <div class="card-3">Educational Quiz <span class="points">+25 pts</span></div>
+          <div class="card-3">Social Media Share <span class="points">+10 pts</span></div>
+        </div>
+        <div class="bonus">
+          Bonus opportunity! Earn <strong>double points</strong> on all donations during National Blood Donor Month (January)
+        </div>
+      </div>
+    </div>
+
+    <!-- Redeem Rewards Section -->
+    <div class="redeem-rewards">
+      <h2><span class="icon">🎁</span> Redeem Rewards</h2>
+      <div class="available-points">Available Points: <strong>580 points</strong></div>
+      <div class="tabs">
+        <button class="tab active">All</button>
+        <button class="tab">Gift Cards</button>
+        <button class="tab">Merchandise</button>
+        <button class="tab">Experiences</button>
+      </div>
+      <div class="rewards-grid">
+        <div class="reward">
+          <img src="https://via.placeholder.com/150" alt="Gift Card" />
+          <p><strong>$25 Gift Card</strong></p>
+          <p>250 pts</p>
+        </div>
+        <div class="reward">
+          <img src="https://via.placeholder.com/150" alt="T-Shirt" />
+          <p><strong>BloodLife T-Shirt</strong></p>
+          <p>150 pts</p>
+        </div>
+        <div class="reward">
+          <img src="https://via.placeholder.com/150" alt="Cinema" />
+          <p><strong>Cinema Tickets</strong></p>
+          <p>200 pts</p>
+        </div>
+        <div class="reward">
+          <img src="https://via.placeholder.com/150" alt="Charity" />
+          <p><strong>Charity Donation</strong></p>
+          <p>100 pts</p>
+        </div>
+      </div>
+      <div class="upcoming">
+        <p>Upcoming Rewards</p>
+        <p>New rewards are being added regularly. Check back often or earn more points to unlock exclusive premium rewards!</p>
+        <button class="view-all">🎟 View All</button>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <!-- section 4 -->
+  <!-- Donation Certificates Section -->
+  <div class="donation-card donation-certificates">
+    <h2><span>✔</span> Donation Certificates</h2>
+
+    <div class="donation-certificate-item">
+      <div class="donation-certificate-info">
+        <strong>Blood Donation Certificate</strong>
+        Blood - O+<br />
+        Date: 4/15/2025
+      </div>
+      <div class="donation-buttons">
+        <button>⬇ Download</button>
+        <button>✉ Email</button>
+      </div>
+    </div>
+
+    <div class="donation-certificate-item">
+      <div class="donation-certificate-info">
+        <strong>Medicine Donation Certificate</strong>
+        Medicine - Antibiotics<br />
+        Date: 3/22/2025
+      </div>
+      <div class="donation-buttons">
+        <button>⬇ Download</button>
+        <button>✉ Email</button>
+      </div>
+    </div>
+
+    <div class="donation-info-box">
+      <strong>About Donation Certificates</strong>
+      <p>Each certificate serves as proof of your donation and contribution to saving lives. You can download and share these certificates for:</p>
+      <ul>
+        <li>Tax deduction purposes</li>
+        <li>Employment benefits at participating companies</li>
+        <li>Verification of community service hours</li>
+        <li>Sharing your impact with friends and family</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Transaction History Section -->
+  <div class="donation-card donation-history">
+    <h2><span>☰</span> Transaction History</h2>
+
+    <div class="donation-tabs">
+      <button class="active">All</button>
+      <button>Donations</button>
+      <button>Redemptions</button>
+      <button>Points</button>
+    </div>
+
+    <table class="donation-table">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Details</th>
+          <th>Date</th>
+          <th>Points</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="donation-badge Donation">Donation</span></td>
+          <td>Blood Donation - A+</td>
+          <td>4/28/2025</td>
+          <td class="donation-positive">+100</td>
+        </tr>
+        <tr>
+          <td><span class="donation-badge Donation">Donation</span></td>
+          <td>Medicine Donation - Insulin</td>
+          <td>4/25/2025</td>
+          <td class="donation-positive">+75</td>
+        </tr>
+        <tr>
+          <td><span class="donation-badge Redemption">Redemption</span></td>
+          <td>Redeemed - $25 Gift Card</td>
+          <td>4/20/2025</td>
+          <td class="donation-negative">-25</td>
+        </tr>
+        <tr>
+          <td><span class="donation-badge Request">Request</span></td>
+          <td>Request Fulfilled - Type O Blood</td>
+          <td>4/15/2025</td>
+          <td class="donation-positive">+15</td>
+        </tr>
+        <tr>
+          <td><span class="donation-badge Points">Points</span></td>
+          <td>Bonus Points - Referral Program</td>
+          <td>4/10/2025</td>
+          <td class="donation-positive">+50</td>
+        </tr>
+        <tr>
+          <td><span class="donation-badge Donation">Donation</span></td>
+          <td>Blood Donation - O-</td>
+          <td>4/5/2025</td>
+          <td class="donation-positive">+100</td>
+        </tr>
+        <tr>
+          <td><span class="donation-badge Redemption">Redemption</span></td>
+          <td>Redeemed - Premium Merchandise</td>
+          <td>3/28/2025</td>
+          <td class="donation-negative">-30</td>
+        </tr>
+        <tr>
+          <td><span class="donation-badge Request">Request</span></td>
+          <td>Emergency Blood Request</td>
+          <td>3/20/2025</td>
+          <td class="donation-positive">+20</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="donation-footer">
+      <span>📅 Showing transactions from last 90 days</span>
+      <a href="#">View all history</a>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Live Map | LifeLink</title>
+  <link rel="stylesheet" href="/css/live-map.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+  <header>
+    <div class="logo">LifeLink</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Requests</a>
+      <a href="#">Live Map</a>
+      <a href="#">Profile</a>
+    </nav>
+  </header>
+
+  <div class="main-container">
+    <aside class="sidebar">
+        <h2>Menu</h2>
+        <ul class="sidebar-menu">
+            <li><a href="#"><i class="fas fa-map-marker-alt"></i> Nearby Help</a></li>
+            <li><a href="#"><span>🚑</span> Active Responders</a></li>
+          <li><a href="#"><span>⚠️</span> Disaster Zones</a></li>
+          <li><a href="#"><span>⚙️</span> Settings</a></li>
+        </ul>
+      </aside>
+      
+
+    <section class="map-content">
+      <h2>Live Help Map</h2>
+      <div id="map"></div>
+    </section>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="/js/live-map.js"></script>
+</body>
+</html>
